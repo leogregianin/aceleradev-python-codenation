@@ -1,0 +1,17 @@
+============================= test session starts =============================
+platform win32 -- Python 3.6.5, pytest-3.6.2, py-1.5.3, pluggy-0.6.0 -- C:\Program Files (x86)\Python36\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\leonardo\codenation\validador-emails-python, inifile:
+collecting ... collected 8 items
+
+test_submit.py::EmailValidTests::test_eight PASSED                       [ 12%]
+test_submit.py::EmailValidTests::test_five PASSED                        [ 25%]
+test_submit.py::EmailValidTests::test_four PASSED                        [ 37%]
+test_submit.py::EmailValidTests::test_one PASSED                         [ 50%]
+test_submit.py::EmailValidTests::test_seven PASSED                       [ 62%]
+test_submit.py::EmailValidTests::test_six PASSED                         [ 75%]
+test_submit.py::EmailValidTests::test_three PASSED                       [ 87%]
+test_submit.py::EmailValidTests::test_two PASSED                         [100%]
+
+ generated xml file: C:\Users\leonardo\codenation\validador-emails-python\output.xml 
+========================== 8 passed in 0.18 seconds ===========================
