@@ -1,4 +1,4 @@
-import math
+from math import degrees, atan2
 
-def calc_angle_mbc(a, b):
-    return int(round(math.degrees(math.atan2(a, b))))
+def calc_angle_mbc(mb, bc):
+    return int(round(degrees(atan2(mb, bc))))

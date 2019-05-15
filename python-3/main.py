@@ -1,20 +1,20 @@
 import numpy as np
 import datetime
 
-class ManagerDates:
 
+class ManagerDates:
     def date_is_valid(self, date):
         try:
-            datetime.datetime.strptime(date, '%d/%m/%Y')
+            datetime.datetime.strptime(date, "%d/%m/%Y")
         except ValueError:
             return False
         return True
 
     def date_weekday(self, date):
-        return date.strftime('%A')
+        return date.strftime("%A")
 
     def convert_string_to_date(self, date_str):
-        formats = ['%d/%m/%Y','%d-%m-%Y','%d%m%Y']
+        formats = ["%d/%m/%Y", "%d-%m-%Y", "%d%m%Y"]
         date = False
         for date_format in formats:
             try:
@@ -24,8 +24,8 @@ class ManagerDates:
         return date
 
     def get_all_dates(self, month, year):
-        date = np.datetime64(f'{year}-{month}', dtype='datetime64[D]')
-        return np.arange(date, date + np.timedelta64(1, 'M'), dtype='datetime64[D]')
+        date = np.datetime64(f"{year}-{month}", dtype="datetime64[D]")
+        return np.arange(date, date + np.timedelta64(1, "M"), dtype="datetime64[D]")
 
     def count_days_mounth(self, month, year):
         days_of_month = self.get_all_dates(month, year)
@@ -33,5 +33,7 @@ class ManagerDates:
         return np.count_nonzero(workdays)
 
     def get_first_monday(self, year):
-        date = np.busday_offset(f'{year}-05', 0, roll="forward", holidays=[f'{year}-05-01'], weekmask="Mon")
+        date = np.busday_offset(
+            f"{year}-05", 0, roll="forward", holidays=[f"{year}-05-01"], weekmask="Mon"
+        )
         return date.tolist().strftime("%d/%m/%Y")
